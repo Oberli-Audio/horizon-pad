@@ -6,7 +6,7 @@ What changed in each version of Horizon Pad, newest first. The format follows
 
 ## [Unreleased]
 
-## [0.1.0] - 2026-10-22
+## [0.1.0] - 2026-11-02
 
 The first versioned build for friends.
 
