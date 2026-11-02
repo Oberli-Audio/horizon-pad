@@ -7,7 +7,8 @@ What changed in each version of Horizon Pad, newest first. The format follows
 ## [Unreleased]
 
 ### Changed
-- The code is now MIT-licensed: use it in your own work. The name, the Oberli marks, the artwork and the factory presets stay reserved (`LICENSE`).
+- The code is now MIT-licensed: use it in your own work, and the factory presets are free too. The name, the Oberli marks and the artwork stay reserved (`LICENSE`).
+- macOS: the README's Terminal line for a blocked plugin covers the folder for all users as well.
 
 ## [0.1.0] - 2026-11-02
 

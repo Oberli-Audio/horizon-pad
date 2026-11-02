@@ -22,15 +22,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 2. The name and the artwork: all rights reserved
 
 Not covered by the MIT License, and reserved by Oberli Audio: the names "Horizon Pad" and
-"Oberli Audio", the Oberli marks (assets/logo/), the plugin's artwork and visual design as
-shown in its editor, and the factory presets (presets/). A plugin built from this code must
-carry its own name and its own artwork and must not suggest that it comes from Oberli Audio.
+"Oberli Audio", the Oberli marks (assets/logo/), and the plugin's artwork and visual design
+as shown in its editor. A plugin built from this code must carry its own name and its own
+artwork and must not suggest that it comes from Oberli Audio.
 
 3. Using the plugin
 
 Horizon Pad is free to download, install and use. The music you make with it is yours,
 whether you share it with the whole world or keep it on a hard drive nobody will ever find.
-Use the factory presets with the plugin as you like; presets you save are yours. The plugin
-is provided as is, without warranty of any kind.
+The factory presets (presets/) are free to use, share and change; presets you save are
+yours. The plugin is provided as is, without warranty of any kind.
 
 Third-party components carry their own licences (THIRD_PARTY_NOTICES.md).

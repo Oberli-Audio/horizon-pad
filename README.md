@@ -31,8 +31,10 @@ which is expected. **Right after that:** System Settings > Privacy & Security, s
 **Open Anyway** next to Horizon Pad (the button disappears after a while; if it is gone, scan
 again). Then rescan (Ableton Live: Preferences > Plug-Ins > Rescan). Once per download; needs
 an administrator account. If the message says "damaged" instead of "cannot be verified", or the button never
-appears: Terminal, `xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/"Horizon Pad.vst3"`,
-then rescan.
+appears: Terminal, `xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/"Horizon Pad.vst3"`
+(your own folder) or `sudo xattr -dr com.apple.quarantine /Library/Audio/Plug-Ins/VST3/"Horizon Pad.vst3"`
+(the folder for all users; asks for your password), then rescan (Ableton Live: hold Option and
+click Rescan, so it retries a plugin that failed before). Keep only one copy of Horizon Pad.
 
 ## Update
 Same as install, over the old folder (quit your DAW first). Your presets and settings stay. If the
@@ -76,8 +78,8 @@ entry (Windows Logs > Application, source "Application Error").
 ## Licence
 Free to use. The music you make with it is yours, whether you share it with the whole world or
 keep it on a hard drive nobody will ever find; so are the presets you save. The code is MIT:
-use it in your own work. The name, the Oberli marks, the artwork and the factory presets stay
-reserved, so a plugin built from it needs its own name and look. Details: [`LICENSE`](LICENSE).
+use it in your own work. The factory presets are free too. The name, the Oberli marks and the
+artwork stay reserved, so a plugin built from it needs its own name and look. Details: [`LICENSE`](LICENSE).
 Third-party notices: [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 VST is a registered trademark of Steinberg Media Technologies GmbH.
 
