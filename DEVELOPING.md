@@ -631,4 +631,4 @@ packaging/
 
 ---
 
-© Oberli Audio. All rights reserved.
+© Oberli Audio. The code is MIT; the name, the marks, the artwork and the factory presets are reserved (LICENSE).

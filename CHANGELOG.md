@@ -6,6 +6,9 @@ What changed in each version of Horizon Pad, newest first. The format follows
 
 ## [Unreleased]
 
+### Changed
+- The code is now MIT-licensed: use it in your own work. The name, the Oberli marks, the artwork and the factory presets stay reserved (`LICENSE`).
+
 ## [0.1.0] - 2026-11-02
 
 The first versioned build for friends.

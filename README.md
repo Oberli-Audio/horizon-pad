@@ -75,8 +75,10 @@ entry (Windows Logs > Application, source "Application Error").
 
 ## Licence
 Free to use. The music you make with it is yours, whether you share it with the whole world or
-keep it on a hard drive nobody will ever find; so are the presets you save. Source and binaries:
-see [`LICENSE`](LICENSE). Third-party notices: [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+keep it on a hard drive nobody will ever find; so are the presets you save. The code is MIT:
+use it in your own work. The name, the Oberli marks, the artwork and the factory presets stay
+reserved, so a plugin built from it needs its own name and look. Details: [`LICENSE`](LICENSE).
+Third-party notices: [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 VST is a registered trademark of Steinberg Media Technologies GmbH.
 
 ## For developers
