@@ -1,11 +1,9 @@
 #!/bin/bash
-# Builds the VST3 (if needed) and installs it to the CURRENT USER's plugin
-# folder (~/Library/Audio/Plug-Ins/VST3), which every major DAW (including
-# Ableton Live) scans right alongside the system-wide one. This needs no
-# elevated privileges at all - no osascript, no admin password prompt - so
-# it can run completely unattended (e.g. from a background agent iterating
-# on its own). See the one-time migration note in git history for why this
-# replaced the old /Library + osascript version.
+# Builds the VST3 (if needed) and installs it to the folder for all users
+# (/Library/Audio/Plug-Ins/VST3), where the release zip goes too (ship-bob
+# locations.md), and removes a per-user copy so the host never sees two.
+# When that folder is not writable it asks for the password (sudo); without
+# a terminal (a background agent) it stops and prints the command instead.
 #
 # Installs a Release build (build-release/, configured here if missing):
 # that is what a host's CPU meter should be judged on. A Debug build is
@@ -32,10 +30,25 @@ fi
 cmake --build "$BUILD_DIR" --target HorizonPad_VST3 -j 8
 
 SRC="$BUILD_DIR/HorizonPad_artefacts/$CONFIG/VST3/Horizon Pad.vst3"
-DEST="$HOME/Library/Audio/Plug-Ins/VST3/Horizon Pad.vst3"
+DEST_DIR="/Library/Audio/Plug-Ins/VST3"
+DEST="$DEST_DIR/Horizon Pad.vst3"
+SUDO=""
+if [[ ! -w "$DEST_DIR" ]] || { [[ -e "$DEST" ]] && [[ ! -w "$DEST" ]]; }; then
+    if [[ -t 0 ]]; then
+        SUDO="sudo"
+    else
+        echo "$DEST_DIR needs the password: run tools/install_plugin.sh in a terminal" >&2
+        exit 1
+    fi
+fi
 
-mkdir -p "$(dirname "$DEST")"
-rm -rf "$DEST"
-cp -R "$SRC" "$DEST"
+$SUDO mkdir -p "$DEST_DIR"
+$SUDO rm -rf "$DEST"
+$SUDO cp -R "$SRC" "$DEST"
+USER_COPY="$HOME/Library/Audio/Plug-Ins/VST3/Horizon Pad.vst3"
+if [[ -e "$USER_COPY" ]]; then
+    rm -rf "$USER_COPY"
+    echo "Removed the per-user copy $USER_COPY"
+fi
 
 echo "Installed $CONFIG build to $DEST"

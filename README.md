@@ -1,7 +1,7 @@
 # Horizon Pad
 
 <!-- Schnellstart (Deutsch) -->
-**Schnellstart:** Den Ordner `Horizon Pad.vst3` aus dem Zip nach `~/Library/Audio/Plug-Ins/VST3/`
+**Schnellstart:** Den Ordner `Horizon Pad.vst3` aus dem Zip nach `/Library/Audio/Plug-Ins/VST3/`
 kopieren (Windows: `C:\Program Files\Common Files\VST3\`) und in der DAW die Plug-ins neu scannen
 lassen. Horizon Pad auf eine MIDI-Spur ziehen: es startet mit dem Preset "Lagerfeuer". Zuerst ATTACK
 für den Einsatz, FILTER für die Helligkeit und REVERB für den Raum drehen.
@@ -25,16 +25,17 @@ and rescan the plug-ins (Ableton Live: Preferences > Plug-Ins > Rescan; Ableton 
 Preferences > File/Folder, "Use VST3 Plug-In System Folder" on, Rescan). If the window looks
 blurry in Ableton Live, turn off its "Auto-Scale Plug-in Window" for Horizon Pad.
 
-**macOS:** Finder > Go > Go to Folder, paste `~/Library/Audio/Plug-Ins/VST3/`, drop
-`Horizon Pad.vst3` there. Start your DAW and let it scan; it says the plugin cannot be verified,
+**macOS:** Finder > Go > Go to Folder, paste `/Library/Audio/Plug-Ins/VST3/` (the folder for
+all users; Finder may ask for your password), drop `Horizon Pad.vst3` there. If an older copy
+sits in `~/Library/Audio/Plug-Ins/VST3/`, delete it: two copies leave the DAW to pick one. Start your DAW and let it scan; it says the plugin cannot be verified,
 which is expected. **Right after that:** System Settings > Privacy & Security, scroll down,
 **Open Anyway** next to Horizon Pad (the button disappears after a while; if it is gone, scan
 again). Then rescan (Ableton Live: Preferences > Plug-Ins > Rescan). Once per download; needs
 an administrator account. If the message says "damaged" instead of "cannot be verified", or the button never
-appears: Terminal, `xattr -dr com.apple.quarantine ~/Library/Audio/Plug-Ins/VST3/"Horizon Pad.vst3"`
-(your own folder) or `sudo xattr -dr com.apple.quarantine /Library/Audio/Plug-Ins/VST3/"Horizon Pad.vst3"`
-(the folder for all users; asks for your password), then rescan (Ableton Live: hold Option and
-click Rescan, so it retries a plugin that failed before). Keep only one copy of Horizon Pad.
+appears: Terminal, `sudo xattr -dr com.apple.quarantine /Library/Audio/Plug-Ins/VST3/"Horizon Pad.vst3"`
+(asks for your password), then rescan (Ableton Live: hold Option and click Rescan, so it
+retries a plugin that failed before). Never click "Move to Trash" in the macOS dialog: it
+deletes the plugin.
 
 ## Update
 Same as install, over the old folder (quit your DAW first). Your presets and settings stay. If the
@@ -48,7 +49,7 @@ are copied over on the first start. The old `Quelle Music` folders can be delete
 
 ## Uninstall
 Delete `Horizon Pad.vst3` from `C:\Program Files\Common Files\VST3\` or
-`~/Library/Audio/Plug-Ins/VST3/`. Settings (the window size): `%APPDATA%\Oberli Audio\Horizon Pad\`
+`/Library/Audio/Plug-Ins/VST3/`. Settings (the window size): `%APPDATA%\Oberli Audio\Horizon Pad\`
 or `~/Library/Application Support/Oberli Audio/Horizon Pad/`. Presets:
 `Documents\VST3 Presets\Oberli Audio\Horizon Pad\` or `~/Library/Audio/Presets/Oberli Audio/Horizon Pad/`,
 only if you also want your own presets gone.

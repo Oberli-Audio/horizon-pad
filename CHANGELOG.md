@@ -8,7 +8,8 @@ What changed in each version of Horizon Pad, newest first. The format follows
 
 ### Changed
 - The code is now MIT-licensed: use it in your own work, and the factory presets are free too. The name, the Oberli marks and the artwork stay reserved (`LICENSE`).
-- macOS: the README's Terminal line for a blocked plugin covers the folder for all users as well.
+- macOS: Horizon Pad goes into the folder for all users, `/Library/Audio/Plug-Ins/VST3/`, like on Windows; delete an older copy in `~/Library/Audio/Plug-Ins/VST3/`. Never click "Move to Trash" when macOS blocks it: the README has the Terminal line instead.
+- The release page shows three files: the macOS zip, the Windows zip and an extras zip (checksums, build details, crash symbols, the Windows crash-dump switch).
 
 ## [0.1.0] - 2026-11-02
 

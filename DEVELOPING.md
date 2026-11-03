@@ -231,13 +231,13 @@ build/HorizonPad_artefacts/Release/VST3/Horizon Pad.vst3
 ```bash
 cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build --target HorizonPad_VST3
-cp -R "build/HorizonPad_artefacts/Release/VST3/Horizon Pad.vst3" ~/Library/Audio/Plug-Ins/VST3/
+sudo cp -R "build/HorizonPad_artefacts/Release/VST3/Horizon Pad.vst3" /Library/Audio/Plug-Ins/VST3/
 ```
 
 Or, for local dev iteration, `tools/install_plugin.sh` builds the Release
-config and copies it straight to `~/Library/Audio/Plug-Ins/VST3/` (the
-per-user folder every major DAW, including Ableton Live, scans — no admin
-privileges or password prompt needed). `tools/install_plugin.sh --debug`
+config and copies it to `/Library/Audio/Plug-Ins/VST3/`, the folder for all
+users where the release zip goes too, and removes a per-user copy (it asks
+for the password when that folder is not writable). `tools/install_plugin.sh --debug`
 installs a Debug build for a debugger; it is several times heavier on the
 audio thread, so don't read a DAW's CPU meter with it.
 
@@ -593,7 +593,7 @@ Source/
     AboutPanel.{h,cpp}             The back of the panel: details, licences
 assets/                            The editor's bundled data (UiData): Rubik (OFL), the Oberli marks (SVG)
 tools/
-  install_plugin.sh                Local dev build+install to ~/Library/Audio/Plug-Ins/VST3
+  install_plugin.sh                Local dev build+install to /Library/Audio/Plug-Ins/VST3
   sound_tool/Main.cpp              HorizonPadSoundTool - offline DSP render+analysis CLI
   gui_snapshot/Main.cpp            HorizonPadGuiSnapshot - the editor rendered offscreen to PNG
   tests/dsp_tests.py               The CTest suite (G6)

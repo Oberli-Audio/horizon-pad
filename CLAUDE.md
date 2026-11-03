@@ -33,8 +33,9 @@ Bundle output: `build/HorizonPad_artefacts/Release/VST3/Horizon Pad.vst3`
 (Debug config → `.../Debug/VST3/...`).
 
 For local dev iteration on macOS, `tools/install_plugin.sh` builds Release
-(`build-release/`) and copies straight to `~/Library/Audio/Plug-Ins/VST3/`
-(per-user folder, no admin password prompt, safe to run unattended).
+(`build-release/`) and copies it to `/Library/Audio/Plug-Ins/VST3/`, the folder for all
+users where the release zip goes too, and removes a per-user copy; it asks for the password
+when that folder is not writable and stops without a terminal.
 `--debug` installs the Debug build instead - only for a debugger: it costs
 ~6x the audio-thread time of Release (measured 2026-10-10), so never judge a
 host's CPU meter on it.
